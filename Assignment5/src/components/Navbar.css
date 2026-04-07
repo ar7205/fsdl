@@ -1,0 +1,147 @@
+/* ===== VERTICAL SIDEBAR NAVBAR ===== */
+.navbar {
+  width: var(--sidebar-w);
+  min-height: 100vh;
+  background: var(--bg2);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1rem;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  flex-shrink: 0;
+  z-index: 100;
+}
+
+.navbar-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+  padding: 0 0.6rem;
+  margin-bottom: 2.5rem;
+}
+
+.brand-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--neon-green), var(--neon-cyan));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 0 20px rgba(0,255,179,0.35);
+}
+
+.brand-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+.brand-tagline {
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+}
+
+/* Nav section label */
+.nav-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  padding: 0 0.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  flex: 1;
+}
+
+.navbar-links a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 0.75rem;
+  color: var(--text-dim);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+  border-radius: 10px;
+  transition: all 0.18s ease;
+  position: relative;
+}
+
+.navbar-links a .nav-icon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.navbar-links a:hover {
+  color: var(--text);
+  background: rgba(255,255,255,0.05);
+}
+
+.navbar-links a.active {
+  color: var(--neon-green);
+  background: rgba(0,255,179,0.08);
+  border: 1px solid rgba(0,255,179,0.15);
+}
+
+.navbar-links a.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 60%;
+  background: var(--neon-green);
+  border-radius: 0 3px 3px 0;
+  box-shadow: 0 0 10px var(--neon-green);
+}
+
+/* Bottom status */
+.navbar-footer {
+  padding: 0.6rem;
+  margin-top: auto;
+}
+
+.status-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(0,255,179,0.06);
+  border: 1px solid rgba(0,255,179,0.12);
+  border-radius: 8px;
+  padding: 0.5rem 0.7rem;
+  font-size: 0.72rem;
+  color: var(--neon-green);
+  font-weight: 500;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--neon-green);
+  box-shadow: 0 0 6px var(--neon-green);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
